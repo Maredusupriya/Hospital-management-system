@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient list</title>
+
+     <style>
+    body
+    {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+      margin: 0;
+      padding: 20px;
+    }
+       h1 {
+      text-align: center;
+      color: #00796b;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 90%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+       th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background-color: #00796b;
+      color: white;
+    }
+       td a {
+      color: #0288d1;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    td a:hover {
+      text-decoration: underline;
+    }
+       .actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+        button a {
+      text-decoration: none;
+      color: white;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    .add-button {
+      text-align: center;
+      margin: 30px 0 10px;
+    }
+        .back-link
+        {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #00796b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:
+     {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #00796b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<h1 style="align:center;">Patient list</h1>
+<table border="1" align="center">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>Date_of_Birth</th>
+    <th>Address</th>
+    <th>Emergency_name</th>
+    <th>Emergency_contact</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for patient in patients %}
+  <tr>
+    <td>{{patient.first_name}} {{patient.last_name}}</td>
+    <td>{{patient.age}}</td>
+    <td>{{patient.gender}}</td>
+    <td>{{patient.email}}</td>
+    <td>{{patient.date_of_birth}}</td>
+    <td>{{patient.address}}</td>
+    <td>{{patient.emergency_name}}</td>
+    <td>{{patient.emergency_contact}}</td>
+    <td>{{patient.actions}}</td>
+    <td><a href="#">View</a></td>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<div style="text-align:center; margin-top:10px;">
+
+  <button><a href="{% url 'add_patient' %}">Add new patient</a></button>
+</div>
+<a href="{% url 'home' %}"> Back To Home</a>
+</body>
+</html>
