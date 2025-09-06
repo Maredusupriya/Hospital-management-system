@@ -1,0 +1,7 @@
+The Hospital Management System (HMS) is a web-based application designed to streamline and digitalize the operations of healthcare facilities. 
+The system provides a centralized platform to manage hospital records, patient details, appointments, and billing processes efficiently.
+
+The hospital module maintains information related to departments, and available doctors, enabling better organization and accessibility.
+The patient module stores patient details such as demographics, medical history, and admission records, ensuring quick retrieval of data when required. 
+The appointment module allows patients to schedule consultations with doctors, reducing waiting times and improving service efficiency.
+The billing module automates the generation of bills, including consultation charges, treatment costs, and medicine expenses, thereby minimizing human errors and ensuring transparency.
