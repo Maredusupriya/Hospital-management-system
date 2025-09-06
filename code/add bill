@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+          body
+         {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+      margin: 0;
+      padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1> CREATE NEW BILL </h1>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit"> Submit </button>
+</form>
+<a href="{% url 'home' %}">Back to home</a>
+</body>
+</html>
