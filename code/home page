@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>HEALTH CARE SYSTEM</title>
+    <style type="text/css">
+           *
+           {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+         body
+         {
+            background-image: url("{% static '1.jpg' %}");
+            background-size: cover;                  /* Ensures the image covers the full screen */
+            background-repeat: no-repeat;            /* Prevents tiling */
+            background-attachment: fixed;            /* Makes the background image static */
+            background-position: center;
+            font-family: Arial, sans-serif;
+
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header
+         {
+            background-color: #0077b6;
+            padding: 20px 40px;
+            color: white;
+        }
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffdd00;
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        fieldset {
+            border: none;
+            padding: 20px;
+            background-color: #ffffffcc;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top:120px;
+        }
+
+        .welcome-section h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .welcome-section p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .date-overview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1 1 200px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h1 {
+            font-size: 22px;
+            color: #0077b6;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 24px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        footer {
+            background-color: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 15px;
+
+        }
+
+        @media (max-width: 768px) {
+            .date-overview {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <h1>
+             HOSPITAL MANAGEMENT HEALTH CARE SYSTEM
+        </h1>
+        <ul>
+            <li><a href="{% url 'patient_list' %}">Patients</a></li>
+            <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
+            <li><a href="{% url 'appointment_list' %}">Appointments</a></li>
+            <li><a href="{% url 'bill_list' %}">Bills</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <fieldset style="color:#FF3322;">
+        <section class="Welcome - Section">
+            <h2> Welcome to the Health care system </h2>
+            <p> Here is a quick overview of your health care date</p>
+        </section>
+        <section class="date-overview">
+            <div class="card">
+                <h1>Total patients</h1>
+                <p>{{total_patients}}</p>
+            </div>
+            <div class="card">
+                <h1>Total Doctor</h1>
+                <p>{{total_doctors}}</p>
+            </div>
+            <div class="card">
+                <h1>Total Appointment</h1>
+                <p>{{total_appointments}}</p>
+            </div>
+            <div class="card">
+                <h1>Total Bill</h1>
+                <p>{{total_bills}}</p>
+            </div>
+        </section>
+    </fieldset>
+</main>
+<footer>
+<p> 2025 Healthcare management system.All rights reserved.</p>
+</footer>
+</body>
+</html>
